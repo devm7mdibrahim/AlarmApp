@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data class="AlarmDataBinding">
+        <variable
+            name="alarm"
+            type="com.devmohamedibrahim1997.alarmapp.pojo.Alarm" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/alarmTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{alarm.getTime}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:ellipsize="end"
+            tools:ignore="RelativeOverlap" />
+
+        <TextView
+            android:id="@+id/alarmLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/alarmTime"
+            android:text="@{alarm.getLabel}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:ellipsize="end"/>
+
+        <Switch
+            android:id="@+id/alarmSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="20dp"
+            tools:checked="@{alarm.isActive}"/>
+
+    </RelativeLayout>
+</layout>
